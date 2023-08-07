@@ -1,4 +1,4 @@
-package br.udemy.andre.foo;
+package br.udemy.andre;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,14 +1,12 @@
 {
     "configurations": [
+        
         {
             "type": "java",
-            "name": "Spring Boot-BarApplication<foo>",
+            "name": "StartUp",
             "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "mainClass": "udemy.example.foo.BarApplication",
-            "projectName": "foo",
-            "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "mainClass": "br.udemy.andre.foo.StartUp",
+            "projectName": "foo"
         }
     ]
 }

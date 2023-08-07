@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.udemy.andre.exception.UnsupportedExcep;
+import br.udemy.andre.exceptions.UnsupportedException;
 
 @RestController
 public class MathController {
@@ -19,11 +19,14 @@ public class MathController {
      * @throws Exception If either number is invalid.
      */
     @RequestMapping(value = "/sum/{numberOne}/{numberTwo}", method = RequestMethod.GET)
-    public Double sum(@PathVariable("numberOne") String numberOne, @PathVariable("numberTwo") String numberTwo) throws Exception {
+    public Double sum(
+            @PathVariable("numberOne") String numberOne,
+            @PathVariable("numberTwo") String numberTwo)
+            throws Exception {
         if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
-            throw new UnsupportedExcep("Invalid number, please set a numeric value.");
+            throw new UnsupportedException("Invalid number, please set a numeric value.");
         }
-        
+
         Double sum = convertToDouble(numberOne) + convertToDouble(numberTwo);
         return sum;
     }
