@@ -1,47 +1,93 @@
 package br.udemy.andre.foo;
-
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.udemy.andre.exceptions.UnsupportedException;
+import br.udemy.andre.Converter.converter;
 
 @RestController
 public class MathController {
 
-    /**
-     * Calculates the sum of two numbers.
-     *
-     * @param numberOne The first number.
-     * @param numberTwo The second number.
-     * @return The sum of the two numbers.
-     * @throws Exception If either number is invalid.
-     */
-    @RequestMapping(value = "/sum/{numberOne}/{numberTwo}", method = RequestMethod.GET)
+
+    @GetMapping("/sum/{numberOne}/{numberTwo}")
     public Double sum(
-            @PathVariable("numberOne") String numberOne,
-            @PathVariable("numberTwo") String numberTwo)
+            @PathVariable String numberOne,
+            @PathVariable String numberTwo)
             throws Exception {
-        if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
+        if (!converter.isNumeric(numberOne) || !converter.isNumeric(numberTwo)) {
             throw new UnsupportedException("Invalid number, please set a numeric value.");
         }
 
-        Double sum = convertToDouble(numberOne) + convertToDouble(numberTwo);
+        Double sum = converter.convertToDouble(numberOne) + converter.convertToDouble(numberTwo);
         return sum;
     }
-    private boolean isNumeric(String str) {
-       if (str == null) {return false;}
-       String string = str.replaceAll(",", ".");
-       return string.matches("-?\\d+(\\.\\d+)?");
-    }
+    
 
-     private Double convertToDouble(String str) {
-        if (str == null) {return 0D;}
-        String string = str.replaceAll(",", ".");
-        if (isNumeric(string)) {
-            return Double.parseDouble(string);
+    @GetMapping("/sub/{numberOne}/{numberTwo}")
+    public Double sub(
+            @PathVariable String numberOne,
+            @PathVariable String numberTwo)
+            throws Exception {
+        if (!converter.isNumeric(numberOne) || !converter.isNumeric(numberTwo)) {
+            throw new UnsupportedException("Invalid number, please set a numeric value.");
         }
-        return 0D;
-    }
+        Double sub = converter.convertToDouble(numberOne) - converter.convertToDouble(numberTwo);
+            return sub;
+        }
+
+        @GetMapping("/mul/{numberOne}/{numberTwo}")
+        public Double mul(
+                @PathVariable String numberOne,
+                @PathVariable String numberTwo)
+                throws Exception {
+            if (!converter.isNumeric(numberOne) || !converter.isNumeric(numberTwo)) {
+                throw new UnsupportedException("Invalid number, please set a numeric value.");
+            }
+            Double mul = converter.convertToDouble(numberOne) * converter.convertToDouble(numberTwo);
+                return mul;
+                }
+        
+        @GetMapping("/div/{numberOne}/{numberTwo}")
+        public Double div(
+                @PathVariable String numberOne,
+                @PathVariable String numberTwo)
+                throws Exception {
+                if (!converter.isNumeric(numberOne) || !converter.isNumeric(numberTwo)) {
+                    throw new UnsupportedException("Invalid number, please set a numeric value.");
+                }
+                Double div = converter.convertToDouble(numberOne) / converter.convertToDouble(numberTwo);
+                    return div;
+                }
+        
+        @GetMapping("/avg/{numberOne}/{numberTwo}")
+        public Double avg(
+                @PathVariable String numberOne,
+                @PathVariable String numberTwo)
+                throws Exception {
+                if (!converter.isNumeric(numberOne) || !converter.isNumeric(numberTwo)) {
+                    throw new UnsupportedException("Invalid number, please set a numeric value.");
+                }
+                Double avg = (converter.convertToDouble(numberOne) + converter.convertToDouble(numberTwo)) / 2;
+                    return avg;
+                }
+        
+        @GetMapping("/sqr/{numberOne}")
+        public Double sqr(
+                @PathVariable String numberOne)
+                throws Exception {
+                if (!converter.isNumeric(numberOne)) {
+                    throw new UnsupportedException("Invalid number, please set a numeric value.");
+                }
+                Double sqr = Math.pow(converter.convertToDouble(numberOne), 2);
+                    return sqr;
+                }
+
+        
+        
+
+
+
+
 }
+            

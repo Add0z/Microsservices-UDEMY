@@ -1,8 +1,6 @@
-package br.udemy.andre.exceptions.handler;
+package br.udemy.andre.person.exceptions.handler;
 import java.util.Date;
 
-import br.udemy.andre.exceptions.ExceptionResponse;
-import br.udemy.andre.exceptions.UnsupportedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -10,6 +8,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+
+import br.udemy.andre.person.exceptions.ExceptionResponse;
+import br.udemy.andre.person.exceptions.UnsupportedException;
 
 @ControllerAdvice
 @RestController

@@ -1,12 +1,48 @@
 {
     "configurations": [
-        
+        {
+            "type": "java",
+            "name": "PersonApplication",
+            "request": "launch",
+            "mainClass": "br.udemy.anre.PersonApplication",
+            "projectName": "person"
+        },
+        {
+            "type": "java",
+            "name": "PersonUp",
+            "request": "launch",
+            "mainClass": "br.udemy.andre.PersonUp"
+        },
+        {
+            "type": "java",
+            "name": "StartUp",
+            "request": "launch",
+            "mainClass": "br.udemy.andre.StartUp",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "StartUp",
+            "request": "launch",
+            "mainClass": "br.udemy.andre.StartUp",
+            "projectName": "foo"
+        },
         {
             "type": "java",
             "name": "StartUp",
             "request": "launch",
             "mainClass": "br.udemy.andre.foo.StartUp",
             "projectName": "foo"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-PersonApplication<person>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.udemy.andre.PersonApplication",
+            "projectName": "person",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
