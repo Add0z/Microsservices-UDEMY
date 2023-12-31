@@ -28,4 +28,7 @@ public class ExceptionResponse implements Serializable {
     public String getDetails() {
         return details;
     }
+
+    public void setStackTrace(Object object) {
+    }
 }

@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../config-server"
+		},
+		{
+			"path": "../../../../../ms-udemy-config-server"
+		},
+		{
+			"path": "../../../../foo"
+		},
+		{
+			"path": "../../../../person"
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic",
+		"java.configuration.updateBuildConfiguration": "interactive"
+	}
+}

@@ -29,16 +29,19 @@ public class CustomizedResponseUnsupportedExce extends ResponseEntityExceptionHa
 	}
 
 
-@ExceptionHandler(UnsupportedException.class)
-public final ResponseEntity<ExceptionResponse> handleBadRequestExceptions(
-        Exception message, WebRequest request) {
-    	ExceptionResponse exceptionResponse = new ExceptionResponse(
-			new Date(),
-			message.getMessage(),
-			request.getDescription(false));
-
-	return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
-}
+	@ExceptionHandler(UnsupportedException.class)
+	public final ResponseEntity<ExceptionResponse> handleBadRequestExceptions(
+			Exception message, WebRequest request) {
+		ExceptionResponse exceptionResponse = new ExceptionResponse(
+				new Date(),
+				message.getMessage(),
+				request.getDescription(false));
+	
+		// Remove stacktrace from the exception response
+		exceptionResponse.setStackTrace(null);
+	
+		return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
+	}
 
 }
 

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class UnsupportedException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
+    
     public UnsupportedException(String message) {
         super(message);
     }
