@@ -12,19 +12,17 @@ public  class Person implements Serializable {
 
     private String surname;
 
-    private String adress;
+    private String address;
 
     private String gender;
 
-    public Person() {
-        
-    }
+    public Person() {}
 
     public Person(Long id ,String name, String surname, String adress, String gender) {
         this.id = id;
         this.name = name;
         this.surname = surname;
-        this.adress = adress;
+        this.address = adress;
         this.gender = gender;
     }
 
@@ -37,47 +35,31 @@ public  class Person implements Serializable {
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         result = prime * result + ((surname == null) ? 0 : surname.hashCode());
-        result = prime * result + ((adress == null) ? 0 : adress.hashCode());
+        result = prime * result + ((address == null) ? 0 : address.hashCode());
         result = prime * result + ((gender == null) ? 0 : gender.hashCode());
         return result;
     }
 
-
-
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
-        if (getClass() != obj.getClass())
-            return false;
+        }
         Person other = (Person) obj;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
+        if (id == null && other.id != null) {
             return false;
-        if (name == null) {
-            if (other.name != null)
-                return false;
-        } else if (!name.equals(other.name))
+        } else if (!id.equals(other.id)) {return false;}
+        if (name == null && other.name != null) {
             return false;
-        if (surname == null) {
-            if (other.surname != null)
-                return false;
-        } else if (!surname.equals(other.surname))
+        } else if (!name.equals(other.name)) {return false;}
+        if (surname == null && other.surname != null) {return false;} else if (!surname.equals(other.surname)) {return false;}
+        if (address == null && other.address != null) {return false;} else if (!address.equals(other.address)) {return false;}
+        if (gender == null && other.gender != null) {
             return false;
-        if (adress == null) {
-            if (other.adress != null)
-                return false;
-        } else if (!adress.equals(other.adress))
-            return false;
-        if (gender == null) {
-            if (other.gender != null)
-                return false;
-        } else if (!gender.equals(other.gender))
-            return false;
+        } else if (!gender.equals(other.gender)) {return false;}
         return true;
     }
 
@@ -108,11 +90,11 @@ public  class Person implements Serializable {
     }
 
     public String getAdress() {
-        return adress;
+        return address;
     }
 
     public void setAdress(String adress) {
-        this.adress = adress;
+        this.address = adress;
     }
 
     public String getGender() {

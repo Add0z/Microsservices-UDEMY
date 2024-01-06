@@ -3,13 +3,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import br.udemy.andre.person.Services.PersonService;
 
@@ -22,7 +16,7 @@ import br.udemy.andre.person.Model.Person;
 public class PersonController {
 
     @Autowired
-    PersonService PersonService = new PersonService();
+   private PersonService PersonService;
 
     @RequestMapping(value = "/{id}",
                     produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
@@ -36,12 +30,11 @@ public class PersonController {
             return PersonService.findAllPersons();
         }
 
-    @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE,
-                    consumes = MediaType.APPLICATION_JSON_VALUE, 
-                    method = RequestMethod.POST)
-    public Person createPerson(@RequestBody Person person){
-                return PersonService.createPerson(person);
-        }
+    @PostMapping(path = "/person",  consumes = MediaType.APPLICATION_JSON_VALUE,
+                                        produces = MediaType.APPLICATION_JSON_VALUE)
+    public Person createPerson(@RequestBody Person person) {
+        return PersonService.createPerson(person);
+    }
 
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE,
                 consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -55,10 +48,5 @@ public class PersonController {
         findById(id);
         PersonService.deletePerson(id);
     }
-            
-            
-            
-            
-            
 }
             
