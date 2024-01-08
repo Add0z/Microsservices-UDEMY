@@ -21,13 +21,15 @@ public class GreetingController {
 
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(name = "name", 
-                            defaultValue = "mundo") String name) {
+                            defaultValue = "") String name) {
         if (name.isEmpty()) {
             name = greetingConfig.getDefaultValue();
         }
 
         return new Greeting(counter.incrementAndGet(), 
-                            String.format(greetingTemplate, greetingConfig.getGreeting(), name));
+                            String.format(greetingTemplate,
+                            greetingConfig.getGreeting(),
+                            name));
                             
         
     }

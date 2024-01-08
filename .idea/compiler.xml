@@ -7,14 +7,20 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
+        <module name="cambioService" />
         <module name="person" />
         <module name="foo" />
         <module name="greeting" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cambio_service" target="20" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cambioService" options="-parameters" />
+      <module name="cambio_service" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="foo" options="-parameters" />
       <module name="greeting" options="-parameters" />

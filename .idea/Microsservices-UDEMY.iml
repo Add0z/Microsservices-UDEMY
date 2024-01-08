@@ -3,8 +3,12 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="17" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.7.14" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.7.14" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:3.1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.29" level="project" />
   </component>
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="18caaf95-30bc-40ad-8f46-aad6e7a14d35" />
