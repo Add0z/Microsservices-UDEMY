@@ -1,0 +1,22 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ì–©´øÿÿÿÿ8èÖ¥‡Î1
+b
+java:S2259:"EA "NullPointerException" could be thrown; "surname" is nullable here.(âý“›8÷Ö¥‡Î1
+b
+java:S2259;"EA "NullPointerException" could be thrown; "address" is nullable here.(Óõ¦›8÷Ö¥‡Î1
+]
+java:S22596"@A "NullPointerException" could be thrown; "id" is nullable here.(Ó‡Õ•8÷Ö¥‡Î1
+_
+java:S22599"BA "NullPointerException" could be thrown; "name" is nullable here.(‰ß­‹8øÖ¥‡Î1
+f
+java:S2259>"DA "NullPointerException" could be thrown; "gender" is nullable here.(´ï«Øÿÿÿÿÿ8÷Ö¥‡Î1
+i
+java:S18716"LThis branch's code block is the same as the block for the branch on line 52.(Ó‡Õ•8üÖ¥‡Î1
+i
+java:S18719"LThis branch's code block is the same as the block for the branch on line 55.(‰ß­‹8üÖ¥‡Î1
+i
+java:S1871:"LThis branch's code block is the same as the block for the branch on line 58.(âý“›8üÖ¥‡Î1
+i
+java:S1871;"LThis branch's code block is the same as the block for the branch on line 59.(Óõ¦›8ýÖ¥‡Î1
+n
+java:S1871>"LThis branch's code block is the same as the block for the branch on line 60.(´ï«Øÿÿÿÿÿ8ýÖ¥‡Î1

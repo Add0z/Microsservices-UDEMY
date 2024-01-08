@@ -1,0 +1,7 @@
+
+u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¥«Ž}8¦Öô‡Î1
+ž
+java:S11866"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹¬ÓÚ8­Öô‡Î1
+g
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(—‚–šýÿÿÿÿ8¯Öô‡Î1
+]	java:S125"<This block of commented-out lines of code should be removed.(Þõ‚½üÿÿÿÿ8±Öô‡Î1

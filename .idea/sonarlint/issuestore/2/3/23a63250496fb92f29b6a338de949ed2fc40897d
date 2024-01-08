@@ -1,0 +1,21 @@
+
+`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
+`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
+`	java:S112+"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
+`	java:S1127"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
+`	java:S112C"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
+`	java:S112N"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
+‚
+java:S1192"lDefine a constant instead of duplicating this literal "Invalid number, please set a numeric value." 6 times.(‡½Ïæ
+v
+java:S1488"[Immediately return this expression instead of assigning it to the temporary variable "sum".(îÂëùÿÿÿÿ
+v
+java:S1488#"[Immediately return this expression instead of assigning it to the temporary variable "sub".(íêÔ¯ıÿÿÿÿ
+v
+java:S1488/"[Immediately return this expression instead of assigning it to the temporary variable "mul".(½áÅÅıÿÿÿÿ
+v
+java:S1488;"[Immediately return this expression instead of assigning it to the temporary variable "div".(ö¯êÙÿÿÿÿÿ
+v
+java:S1488G"[Immediately return this expression instead of assigning it to the temporary variable "avg".(¿Œ»µüÿÿÿÿ
+v
+java:S1488R"[Immediately return this expression instead of assigning it to the temporary variable "sqr".(Ìáÿïıÿÿÿÿ
