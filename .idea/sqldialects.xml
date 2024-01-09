@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/cambioService/src/main/resources/DB/migration/V1__create_table_cambio.sql" dialect="GenericSQL" />
+  </component>
+</project>

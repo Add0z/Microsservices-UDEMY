@@ -3,3 +3,20 @@ server:
 spring:
   application:
     name: cambio-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres?useTimezone=true&serverTimezone=UTC
+    username: postgres
+    password: 211191
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+    flyway:
+      url: jdbc:postgresql://localhost:5432/postgres?useTimezone=true&serverTimezone=UTC
+      schema: cambio_service
+      user: postgres
+      password: 211191

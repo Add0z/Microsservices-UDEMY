@@ -9,6 +9,7 @@
         <module name="config-server" />
         <module name="cambioService" />
         <module name="person" />
+        <module name="bookService" />
         <module name="foo" />
         <module name="greeting" />
       </profile>
@@ -19,6 +20,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bookService" options="-parameters" />
       <module name="cambioService" options="-parameters" />
       <module name="cambio_service" options="-parameters" />
       <module name="config-server" options="-parameters" />

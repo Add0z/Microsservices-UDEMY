@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PersistenceUnitSettings">
+    <persistence-units>
+      <persistence-unit moduleName="cambioService" name="Default">
+        <packages>
+          <package value="br.udemy.andre.cambioService" />
+        </packages>
+      </persistence-unit>
+    </persistence-units>
+  </component>
+</project>

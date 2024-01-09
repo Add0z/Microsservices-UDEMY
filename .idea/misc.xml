@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/config-server/pom.xml" />
         <option value="$PROJECT_DIR$/cambio_service/pom.xml" />
         <option value="$PROJECT_DIR$/cambioService/pom.xml" />
+        <option value="$PROJECT_DIR$/bookService/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
