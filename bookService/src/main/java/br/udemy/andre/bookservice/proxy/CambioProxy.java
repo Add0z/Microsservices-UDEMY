@@ -13,7 +13,7 @@ public interface CambioProxy {
 
     @GetMapping(value = "/cambio/{amount}/{from}/{to}")
     public Cambio getCambio(
-            @PathVariable("amount") BigDecimal amount,
+            @PathVariable("amount") Double amount,
             @PathVariable("from") String from,
             @PathVariable("to") String to);
 

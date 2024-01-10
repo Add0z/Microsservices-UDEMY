@@ -1,8 +1,12 @@
 
 g	java:S112$"FDefine and throw a dedicated exception instead of using a generic one.(”Äãùÿÿÿÿ8Ÿ¦Ê­Ï1
-a
-java:S2259,"DA "NullPointerException" could be thrown; "cambio" is nullable here.(öğÌ8Ä¦Ê­Ï1
 f
-java:S2583#"DChange this condition so that it does not always evaluate to "false"(¬ àõıÿÿÿÿ8Ä¦Ê­Ï1
+java:S2583#"DChange this condition so that it does not always evaluate to "false"(¬ àõıÿÿÿÿ8ïí­Ï1
 L
 java:S1874""/Remove this use of "getById"; it is deprecated.(¡Ïù´8É¦Ê­Ï1
+i
+java:S1128"GRemove this unused import 'br.udemy.andre.bookservice.response.Cambio'.(äÅÄ§şÿÿÿÿ8‚í­Ï1
+j
+java:S1128"HRemove this unused import 'org.springframework.web.client.RestTemplate'.(Îö¼Şûÿÿÿÿ8‚í­Ï1
+P
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8‚í­Ï1

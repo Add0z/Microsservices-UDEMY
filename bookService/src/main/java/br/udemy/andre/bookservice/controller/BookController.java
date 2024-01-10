@@ -35,16 +35,10 @@ public class BookController {
         if (book == null) {
             throw new RuntimeException("Book not found");
         }
-        HashMap<String, String> params = new HashMap<>();
-        params.put("amount", book.getPrice().toString());
-        params.put("from","USD");
-        params.put("to", currency);
-        var response = new RestTemplate().getForEntity("http://localhost:8000/cambio/" + "{amount}/{from}/{to}", Cambio.class,params);
-        var cambio = response.getBody();
+        var cambio = proxy.getCambio(book.getPrice(), "USD", currency);
         book.setPrice(cambio.getConvertedValue());
-
         var port = environment.getProperty("local.server.port");
-        book.setEnvironment(port);
+        book.setEnvironment(port + " FEIGN");
         return book;
     }
 }
