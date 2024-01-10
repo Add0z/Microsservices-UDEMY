@@ -3,4 +3,7 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/cambioService/src/main/resources/DB/migration/V1__create_table_cambio.sql" dialect="GenericSQL" />
   </component>
+  <component name="SqlResolveMappings">
+    <file url="file://$PROJECT_DIR$/cambioService/src/main/resources/DB/migration/V1__create_table_cambio.sql" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;name&quot;:{     &quot;@qname&quot;:&quot;70e54f7c-fbb9-4d4a-844b-073a68f047c7&quot;    },    &quot;group&quot;:{     &quot;@kind&quot;:&quot;database&quot;,     &quot;node&quot;:{      &quot;name&quot;:{       &quot;@qname&quot;:&quot;postgres&quot;      }     }    }   }  } }}" />
+  </component>
 </project>

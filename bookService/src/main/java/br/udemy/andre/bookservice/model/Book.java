@@ -1,27 +1,39 @@
 package br.udemy.andre.bookservice.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
 
+@Entity(name = "book")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Book implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    private long id;
-
+    private static final Long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long Id;
+    @Column(name = "author" ,nullable = false)
     private String author;
+    @Column(name = "publication_date",nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date publicationDate;
+    @Column(nullable = false)
     private Double price;
+    @Column(nullable = false)
     private String title;
+    @Transient
     private String currency;
+    @Transient
     private String environment;
 
 
     public Book() {}
 
-    public Book(long id, String author, Date publicationDate, Double price, String title, String currency, String environment) {
-        this.id = id;
+    public Book(Long Id, String author, Date publicationDate, Double price, String title, String currency, String environment) {
+        this.Id = Id;
         this.author = author;
         this.publicationDate = publicationDate;
         this.price = price;
@@ -30,12 +42,12 @@ public class Book implements Serializable {
         this.environment = environment;
     }
 
-    public long getId() {
-        return id;
+    public Long getId() {
+        return Id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId(Long id) {
+        this.Id = id;
     }
 
     public String getAuthor() {

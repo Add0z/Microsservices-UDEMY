@@ -20,7 +20,7 @@ public class CambioController {
     private Environment environment;
 
     @Autowired
-    private CambioRepo repository;
+    private CambioRepo cambioRepo;
 
     @GetMapping(value = "/{amount}/{from}/{to}")
     public Cambio getCambio(
@@ -28,13 +28,14 @@ public class CambioController {
             @PathVariable("from") String from,
             @PathVariable("to") String to){
 
-        var cambio = repository.findByFromAndTo(from, to);
+        var cambio = cambioRepo.findByFromAndTo(from, to);
         if (cambio == null) throw new RuntimeException("Currency not found");
         var port = environment.getProperty("local.server.port");
         BigDecimal conversionFactor = cambio.getConversionFactor();
         BigDecimal convertedValue = conversionFactor.multiply(amount);
         cambio.setConvertedValue(convertedValue.setScale(2, RoundingMode.CEILING));
         cambio.setEnvironment(port);
+
 
         return cambio;
     }

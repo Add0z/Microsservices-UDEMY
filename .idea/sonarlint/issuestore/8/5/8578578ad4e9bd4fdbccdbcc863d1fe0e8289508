@@ -1,0 +1,7 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õ¦Žê8ÕšÍŠÏ1
+I
+java:S1602",Remove useless curly braces around statement(³¼Î™8‡ºÏŠÏ1
+Z
+java:S1612"=Replace this lambda with method reference 'Flyway::baseline'.(³¼Î™8ŒºÏŠÏ1
+X	java:S125"<This block of commented-out lines of code should be removed.(¡¿Â©8ºÏŠÏ1
