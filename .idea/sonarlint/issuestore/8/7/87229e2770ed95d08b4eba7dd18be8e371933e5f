@@ -1,10 +1,8 @@
 
-g	java:S112 "FDefine and throw a dedicated exception instead of using a generic one.(”Äãùÿÿÿÿ8İ¼¶‰Ï1
+g	java:S112$"FDefine and throw a dedicated exception instead of using a generic one.(”Äãùÿÿÿÿ8Ÿ¦Ê­Ï1
 a
-java:S2259("DA "NullPointerException" could be thrown; "cambio" is nullable here.(öğÌ8–ÑøŠÏ1
+java:S2259,"DA "NullPointerException" could be thrown; "cambio" is nullable here.(öğÌ8Ä¦Ê­Ï1
 f
-java:S2583"DChange this condition so that it does not always evaluate to "false"(¬ àõıÿÿÿÿ8–ÑøŠÏ1
+java:S2583#"DChange this condition so that it does not always evaluate to "false"(¬ àõıÿÿÿÿ8Ä¦Ê­Ï1
 L
-java:S1874"/Remove this use of "getById"; it is deprecated.(¡Ïù´8á¼¶‰Ï1
-H
-java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8œÑøŠÏ1
+java:S1874""/Remove this use of "getById"; it is deprecated.(¡Ïù´8É¦Ê­Ï1

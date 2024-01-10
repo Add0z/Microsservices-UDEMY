@@ -2,6 +2,7 @@ package br.udemy.andre.bookservice.controller;
 
 
 import br.udemy.andre.bookservice.model.Book;
+import br.udemy.andre.bookservice.proxy.CambioProxy;
 import br.udemy.andre.bookservice.repository.BookRepo;
 import br.udemy.andre.bookservice.response.Cambio;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Date;
+
 import java.util.HashMap;
 
 @RestController
@@ -24,6 +25,9 @@ public class BookController {
 
     @Autowired
     private Environment environment;
+
+    @Autowired
+    private CambioProxy proxy;
 
     @GetMapping(value = "/find/{id}/{currency}")
     public Book findBook(@PathVariable Long id, @PathVariable String currency) {
