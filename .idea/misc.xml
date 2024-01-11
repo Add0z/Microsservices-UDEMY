@@ -11,6 +11,8 @@
         <option value="$PROJECT_DIR$/cambio_service/pom.xml" />
         <option value="$PROJECT_DIR$/cambioService/pom.xml" />
         <option value="$PROJECT_DIR$/bookService/pom.xml" />
+        <option value="$PROJECT_DIR$/namingServer/pom.xml" />
+        <option value="$PROJECT_DIR$/ApiGateway/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

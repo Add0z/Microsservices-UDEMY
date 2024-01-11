@@ -11,21 +11,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-
-
-import java.util.HashMap;
 
 @RestController
-@RequestMapping("/book")
+@RequestMapping(value = "/book")
 public class BookController {
 
     @Autowired
     private BookRepo bookRepo;
-
     @Autowired
     private Environment environment;
-
     @Autowired
     private CambioProxy proxy;
 
@@ -38,7 +32,7 @@ public class BookController {
         var cambio = proxy.getCambio(book.getPrice(), "USD", currency);
         book.setPrice(cambio.getConvertedValue());
         var port = environment.getProperty("local.server.port");
-        book.setEnvironment(port + " FEIGN");
+        book.setEnvironment("book port" + port + " - cambio port" + cambio.getEnvironment());
         return book;
     }
 }

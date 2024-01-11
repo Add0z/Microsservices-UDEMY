@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="CambioServiceApplication-8002" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="Cambio">
+    <module name="cambioService" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="br.udemy.andre.cambioService.CambioServiceApplication" />
+    <option name="VM_PARAMETERS" value="-Dserver.port=8002" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -10,8 +10,10 @@
         <module name="cambioService" />
         <module name="person" />
         <module name="bookService" />
+        <module name="namingServer" />
         <module name="foo" />
         <module name="greeting" />
+        <module name="ApiGateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -20,12 +22,14 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ApiGateway" options="-parameters" />
       <module name="bookService" options="-parameters" />
       <module name="cambioService" options="-parameters" />
       <module name="cambio_service" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="foo" options="-parameters" />
       <module name="greeting" options="-parameters" />
+      <module name="namingServer" options="-parameters" />
       <module name="person" options="-parameters" />
     </option>
   </component>
