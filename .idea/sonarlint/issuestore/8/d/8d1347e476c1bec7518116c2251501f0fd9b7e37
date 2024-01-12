@@ -1,0 +1,13 @@
+
+X	java:S125"<This block of commented-out lines of code should be removed.(‹Àùœ8½»ÄÙÏ1
+]	java:S125"<This block of commented-out lines of code should be removed.(°º’úøÿÿÿÿ8äìÄÙÏ1
+E
+java:S1172!"(Remove this unused method parameter "e".(¶¤óí8¹£ÙÏ1
+y
+java:S1128"\Remove this unused import 'io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker'.(›èÌÇ8äìÄÙÏ1
+s
+java:S1128"VRemove this unused import 'io.github.resilience4j.ratelimiter.annotation.RateLimiter'.(ÿƒŠ8á­ÊÙÏ1
+l
+java:S1128"JRemove this unused import 'io.github.resilience4j.retry.annotation.Retry'.(Ä³ß¾úÿÿÿÿ8äìÄÙÏ1
+j
+java:S1128"HRemove this unused import 'org.springframework.web.client.RestTemplate'.(Îö¼Şûÿÿÿÿ8äìÄÙÏ1
