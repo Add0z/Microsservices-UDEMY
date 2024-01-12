@@ -1,5 +1,6 @@
 server:
   port: 8100
+  forward-headers-strategy: framework
 eureka:
   client:
     service-url:
@@ -48,4 +49,13 @@ spring:
     user: postgres
     password: 211191
     out-of-order: true
+springdoc:
+  api-docs:
+    enabled: true
+    path: /book/v3/api-docs
+    version: OPENAPI_3_0
+  swagger-ui:
+    config-url: /book/v3/api-docs/swagger-config
+    url: /book/v3/api-docs
+
 
