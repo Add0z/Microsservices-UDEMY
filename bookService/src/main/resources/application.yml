@@ -48,6 +48,8 @@ spring:
     schema: book_service
     user: postgres
     password: 211191
+    locations: classpath:db/migration
+    baseline-version: 0
     out-of-order: true
 springdoc:
   api-docs:
