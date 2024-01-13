@@ -3778,3 +3778,7 @@ YbookService/src/main/java/br/udemy/andre/bookservice/configuration/WebSecurityC
 RbookService/src/main/java/br/udemy/andre/bookservice/configuration/CorsConfig.java,7/9/79c6df8c9056de601fb31d0fb40cd569a3bd3625
 †
 VcambioService/src/main/java/br/udemy/andre/cambioService/Configuration/CorsConfig.java,7/f/7f3a10c12ecb4028c72b4cd56a64eab27ee633e8
+ƒ
+SApiGateway/src/main/java/br/udemy/andre/apigateway/configuration/OpenAPIConfig.java,8/a/8a1cd48a3e5b167586bcd590ef745d657772cbc1
+€
+PApiGateway/src/main/java/br/udemy/andre/apigateway/configuration/CorsConfig.java,1/6/1607f8a0f0f7f3c6767a5e21920d1cb9c1e91cea
