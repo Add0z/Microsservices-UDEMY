@@ -16,19 +16,37 @@ public class OpenAPIConfig {
 
     @Bean
     @Lazy(false)
-    public List<GroupedOpenApi> apis(SwaggerUiConfigParameters config, RouteDefinitionLocator locator) {
+    public List<GroupedOpenApi> apis(
+            SwaggerUiConfigParameters config,
+            RouteDefinitionLocator locator) {
 
-        var definition = locator.getRouteDefinitions().collectList().block();
+        var definitions = locator.getRouteDefinitions().collectList().block();
+        List<GroupedOpenApi> groupedOpenApis = new ArrayList<>();
 
-        definition.stream().filter(routeDefinition -> routeDefinition.getId().matches(".*-service.*"))
+        definitions.stream()
+                .filter(routeDefinition -> routeDefinition.getId() != null && !routeDefinition.getId().isEmpty())
                 .forEach(routeDefinition -> {
                     String name = routeDefinition.getId();
                     config.addGroup(name);
-                    GroupedOpenApi.builder().pathsToMatch("/" + name + "/**").group(name).build();
+                    GroupedOpenApi groupedOpenApi = GroupedOpenApi.builder()
+                            .pathsToMatch("/" + name + "/**")
+                            .group(name)
+                            .build();
+                    groupedOpenApis.add(groupedOpenApi);
                 });
-        return new ArrayList<>();
 
+        return groupedOpenApis;
     }
 
+    @Bean
+    @Lazy(false)
+    public SwaggerUiConfigParameters swaggerUiConfigParameters(SwaggerUiConfigProperties swaggerUiConfigProperties) {
+        return new SwaggerUiConfigParameters(swaggerUiConfigProperties);
+    }
 
+    @Bean
+    @Lazy(false)
+    public SwaggerUiConfigProperties swaggerUiConfigProperties() {
+        return new SwaggerUiConfigProperties();
+    }
 }

@@ -13,7 +13,7 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: cambio-service
+        - id: cambio
           uri: lb://cambio-service
           predicates:
             - Path=/cambio/**
@@ -21,4 +21,28 @@ spring:
           uri: lb://book-service
           predicates:
             - Path=/book/**
+        - id: openApi
+          uri: lb://api-gateway
+          predicates:
+            - Path=/v3/api-docs/**
+          filters:
+          - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
 
+
+  mvc:
+    servlet:
+      path: /openapi
+
+
+#springdoc:
+##  show-actuator: true
+#  api-docs:
+#    enabled: true
+#    version: OPENAPI_3_0
+#    groups:
+#      enabled: true
+#    path: /v3/api-docs
+#  swagger-ui:
+#    filter: true
+#    config-url: /v3/api-docs/swagger-config
+#    url: /v3/api-docs

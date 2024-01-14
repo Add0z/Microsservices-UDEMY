@@ -35,8 +35,11 @@ spring:
     baseline-version: 0
     out-of-order: true
 springdoc:
+  show-actuator: true
   api-docs:
     enabled: true
+    groups:
+      enabled: true
     path: /cambio/v3/api-docs
     version: OPENAPI_3_0
   swagger-ui:

@@ -4,8 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//@SpringBootApplication(scanBasePackages = "org.springdoc.core.*")
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"br.udemy.andre.apigateway.*"})
 public class ApiGatewayApplication {
 
     public static void main(String[] args) {
