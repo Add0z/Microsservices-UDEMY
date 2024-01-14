@@ -29,9 +29,9 @@ spring:
           - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
 
 
-  mvc:
-    servlet:
-      path: /openapi
+#  mvc:
+#    servlet:
+#      path: /openapi
 
 
 #springdoc:
