@@ -7,9 +7,12 @@ import org.springframework.cloud.gateway.route.RouteDefinitionLocator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.util.ArrayList;
 import java.util.List;
+
+// Other import statements...
 
 @Configuration
 public class OpenAPIConfig {
@@ -31,6 +34,7 @@ public class OpenAPIConfig {
                     GroupedOpenApi groupedOpenApi = GroupedOpenApi.builder()
                             .pathsToMatch("/" + name + "/**")
                             .group(name)
+                            .displayName(name)  // Use displayName to set a friendly name in the UI
                             .build();
                     groupedOpenApis.add(groupedOpenApi);
                 });
