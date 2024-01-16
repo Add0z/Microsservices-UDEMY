@@ -45,3 +45,7 @@ springdoc:
   swagger-ui:
     config-url: /cambio/v3/api-docs/swagger-config
     url: /cambio/v3/api-docs
+management:
+  tracing:
+    sampling:
+      probability: 1.0

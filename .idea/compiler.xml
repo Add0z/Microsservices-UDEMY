@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
         <module name="cambioService" />
+        <module name="ChatGpt" />
         <module name="person" />
         <module name="bookService" />
         <module name="namingServer" />
@@ -23,6 +24,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ApiGateway" options="-parameters" />
+      <module name="ChatGpt" options="-parameters" />
       <module name="bookService" options="-parameters" />
       <module name="cambioService" options="-parameters" />
       <module name="cambio_service" options="-parameters" />

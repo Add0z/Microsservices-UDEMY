@@ -2,6 +2,7 @@ package br.udemy.andre.cambioService.controller;
 
 import br.udemy.andre.cambioService.model.Cambio;
 import br.udemy.andre.cambioService.repository.CambioRepo;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,8 @@ public class CambioController {
     @Autowired
     private Environment environment;
 
+    private Logger logger = org.slf4j.LoggerFactory.getLogger(CambioController.class);
+
     @Autowired
     private CambioRepo cambioRepo;
 
@@ -27,6 +30,8 @@ public class CambioController {
             @PathVariable("amount") BigDecimal amount,
             @PathVariable("from") String from,
             @PathVariable("to") String to){
+
+        logger.info("CambioService.getCambio: {} {} {}", amount, from, to);
 
         var cambio = cambioRepo.findByFromAndTo(from, to);
         if (cambio == null) throw new RuntimeException("Currency not found");
