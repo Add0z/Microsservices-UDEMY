@@ -1,19 +1,32 @@
 package br.udemy.andre.person.Model;
 
+import jakarta.persistence.*;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 import java.io.Serializable;
 
+
+@Entity
+@Table(name = "person")
 public  class Person implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "surname", nullable = false)
     private String surname;
 
+    @Column(name = "address")
     private String address;
 
+    @Column(name = "gender")
     private String gender;
 
     public Person() {}

@@ -1,0 +1,16 @@
+server:
+  port: 8089
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres?useTimezone=true&serverTimezone=UTC
+    username: postgres
+    password: 211191
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect

@@ -1,14 +1,14 @@
-package br.udemy.andre.person.PersonController;
-import java.util.List;
+package br.udemy.andre.PersonVO.PersonController;
 
+import br.udemy.andre.person.PersonVO.PersonVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import br.udemy.andre.person.Services.PersonService;
 
-import br.udemy.andre.person.Model.Person;
-
+import java.util.List;
 
 
 @RequestMapping(value = "/person")
@@ -20,33 +20,34 @@ public class PersonController {
 
     @RequestMapping(value = "/{id}",
                     produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
-    public Person findById(
-            @PathVariable("id") String id) {
+    public PersonVO findById(
+            @PathVariable("id") Long id) {
                 return PersonService.findById(id);
             }
 
     @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
-    public List<Person> findAllPerson(){
+    public List<PersonVO> findAllPerson(){
             return PersonService.findAllPersons();
         }
 
-    @PostMapping(path = "/person",  consumes = MediaType.APPLICATION_JSON_VALUE,
+    @PostMapping( consumes = MediaType.APPLICATION_JSON_VALUE,
                                         produces = MediaType.APPLICATION_JSON_VALUE)
-    public Person createPerson(@RequestBody Person person) {
-        return PersonService.createPerson(person);
+    public PersonVO createPerson(@RequestBody PersonVO personVO) {
+        return PersonService.createPerson(personVO);
     }
 
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE,
                 consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Person updatePerson(@RequestBody Person person){
-        return PersonService.updatePerson(person);
+    public PersonVO updatePerson(@RequestBody PersonVO personVO){
+        return PersonService.updatePerson(personVO);
     }   
     
     
     @DeleteMapping(value = "/del/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public void deletePerson(@PathVariable("id") String id){ 
+    public ResponseEntity<?> deletePerson(@PathVariable("id") Long id){
         findById(id);
         PersonService.deletePerson(id);
+        return ResponseEntity.noContent().build();
     }
 }
             

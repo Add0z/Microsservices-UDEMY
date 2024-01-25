@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SwaggerSettings">
+    <option name="defaultPreviewType" value="SWAGGER_UI" />
     <remoteSpecificationUrls>
       <UrlInfo>
         <option name="urlString" value="https://api.swaggerhub.com/apis/SORAZORA14/FPS_Tracker/1.0.0/swagger.yaml" />

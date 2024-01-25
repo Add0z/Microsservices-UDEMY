@@ -10,7 +10,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import br.udemy.andre.person.exceptions.ExceptionResponse;
-import br.udemy.andre.person.exceptions.UnsupportedException;
+import br.udemy.andre.person.exceptions.ResourceNotFoundExcep;
 
 @ControllerAdvice
 @RestController
@@ -29,8 +29,8 @@ public class CustomizedResponseUnsupportedExce extends ResponseEntityExceptionHa
 	}
 
 
-	@ExceptionHandler(UnsupportedException.class)
-	public final ResponseEntity<ExceptionResponse> handleBadRequestExceptions(
+	@ExceptionHandler(ResourceNotFoundExcep.class)
+	public final ResponseEntity<ExceptionResponse> handleNotFoundExceptions(
 			Exception message, WebRequest request) {
 		ExceptionResponse exceptionResponse = new ExceptionResponse(
 				new Date(),
@@ -40,7 +40,7 @@ public class CustomizedResponseUnsupportedExce extends ResponseEntityExceptionHa
 		// Remove stacktrace from the exception response
 		exceptionResponse.setStackTrace(null);
 	
-		return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
 	}
 
 }

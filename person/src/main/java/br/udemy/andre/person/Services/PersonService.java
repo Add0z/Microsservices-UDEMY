@@ -1,45 +1,56 @@
 package br.udemy.andre.person.Services;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
-
-import org.springframework.stereotype.Service;
 
 import br.udemy.andre.person.Model.Person;
+import br.udemy.andre.person.PersonVO.PersonVO;
+import br.udemy.andre.person.Repository.PersonRepo;
+import br.udemy.andre.person.exceptions.ResourceNotFoundExcep;
+import br.udemy.andre.person.mapper.PersonMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 
 @Service
 public class PersonService{
 
-    private final static AtomicLong counter = new AtomicLong();
+    @Autowired
+    PersonRepo personRepo;
 
-    public Person findById(String id) {
-        Person person = new Person();
-        // person.setId(counter.incrementAndGet());
-        person.setId(Long.parseLong(id));
-        person.setName("Andre");
-        person.setSurname("Pereira ");
-        person.setAdress("Campinas");
-        person.setGender("M");
-        return person;
-        
+    private static final Logger logger = LoggerFactory.getLogger(PersonService.class);
+
+
+    public PersonVO findById(Long id) {
+        logger.info("Find Person by id: " + id);
+
+       var entity = personRepo.findById(id).orElseThrow(() -> new ResourceNotFoundExcep("Person not found for this ID"));
+
+        return PersonMapper.parseObject(entity, PersonVO.class);
     }
 
-    public  List<Person> findAllPersons() {
-        List<Person> persons = new java.util.ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            Person person = mockPerson(i);
-            persons.add(person);
-        }
-        return persons;
+    public  List<PersonVO> findAllPersons() {
+        logger.info("Find All persons");
+        return PersonMapper.parseListObject(personRepo.findAll(), PersonVO.class);
     }
 
-    public  Person updatePerson(Person person) {
-        return person;
+    public  PersonVO updatePerson(PersonVO person) {
+        logger.info("Update PersonVO");
+
+        var entity =  personRepo.findById(person.getId()).orElseThrow(() -> new ResourceNotFoundExcep("Person not found for this ID"));
+
+        entity.setName(person.getName());
+        entity.setSurname(person.getSurname());
+        entity.setAdress(person.getAddress());
+        entity.setGender(person.getGender());
+
+        var vo = PersonMapper.parseObject(personRepo.save(entity), PersonVO.class);
+        return vo;
     }
 
-    private Person mockPerson(int i) {
-        Person person = new Person();
-        person.setId(counter.incrementAndGet());
+    private PersonVO mockPerson(int i) {
+        PersonVO person = new PersonVO();
         person.setName("PersonName" + i);
         person.setSurname("Surname " + i);
         person.setAdress("Address" + i);
@@ -47,10 +58,17 @@ public class PersonService{
         return person;
     }
 
-    public Person createPerson(Person person) {
-        return person;
+    public PersonVO createPerson(PersonVO person) {
+        logger.info("Create Person");
+
+       var entity = PersonMapper.parseObject(person, Person.class);
+       var vo = PersonMapper.parseObject(personRepo.save(entity), PersonVO.class);
+        return vo;
     }
 
-    public void deletePerson(String id) {}
+    public void deletePerson(Long id) {
+        logger.info("Delete Person");
+        personRepo.deleteById(id);
+    }
     
 }
