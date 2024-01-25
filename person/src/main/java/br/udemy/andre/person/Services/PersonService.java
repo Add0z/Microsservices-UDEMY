@@ -4,9 +4,11 @@ import java.util.List;
 
 import br.udemy.andre.person.Model.Person;
 import br.udemy.andre.person.PersonVO.PersonVO;
+import br.udemy.andre.person.PersonVO2.PersonVO2;
 import br.udemy.andre.person.Repository.PersonRepo;
 import br.udemy.andre.person.exceptions.ResourceNotFoundExcep;
 import br.udemy.andre.person.mapper.PersonMapper;
+import br.udemy.andre.person.mapper.custom.PersonMapper2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ public class PersonService{
 
     @Autowired
     PersonRepo personRepo;
+
+    @Autowired
+    PersonMapper2 personMapper2;
 
     private static final Logger logger = LoggerFactory.getLogger(PersonService.class);
 
@@ -63,6 +68,14 @@ public class PersonService{
 
        var entity = PersonMapper.parseObject(person, Person.class);
        var vo = PersonMapper.parseObject(personRepo.save(entity), PersonVO.class);
+        return vo;
+    }
+
+    public PersonVO2 createPerson2(PersonVO2 person) {
+        logger.info("Create Person2");
+
+        var entity = PersonMapper2.convertVOToEntity(person);
+        var vo = PersonMapper2.convertEntityToVO(personRepo.save(entity));
         return vo;
     }
 

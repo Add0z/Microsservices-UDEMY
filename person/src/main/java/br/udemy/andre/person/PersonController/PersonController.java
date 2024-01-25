@@ -1,6 +1,7 @@
-package br.udemy.andre.PersonVO.PersonController;
+package br.udemy.andre.person.PersonController;
 
 import br.udemy.andre.person.PersonVO.PersonVO;
+import br.udemy.andre.person.PersonVO2.PersonVO2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,7 @@ import br.udemy.andre.person.Services.PersonService;
 import java.util.List;
 
 
-@RequestMapping(value = "/person")
+@RequestMapping(value = "/api/person/v1")
 @RestController
 public class PersonController {
 
@@ -49,5 +50,13 @@ public class PersonController {
         PersonService.deletePerson(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PostMapping(value = "/v2",consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public PersonVO2 createPersonV2(@RequestBody PersonVO2 personVO) {
+
+        return PersonService.createPerson2(personVO);
+    }
+
 }
             

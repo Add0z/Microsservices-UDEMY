@@ -101,11 +101,6 @@ public  class Person implements Serializable {
     public void setSurname(String surname) {
         this.surname = surname;
     }
-
-    public String getAdress() {
-        return address;
-    }
-
     public void setAdress(String adress) {
         this.address = adress;
     }
@@ -118,6 +113,10 @@ public  class Person implements Serializable {
         this.gender = gender;
     }
 
-    
-    
+
+    public String getAddress() {return address;}
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }
