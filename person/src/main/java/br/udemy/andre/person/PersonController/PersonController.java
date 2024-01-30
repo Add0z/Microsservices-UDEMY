@@ -19,40 +19,40 @@ public class PersonController {
     @Autowired
    private PersonService PersonService;
 
-    @RequestMapping(value = "/{id}",
-                    produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
+    @GetMapping(value = "/{id}",
+                    produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public PersonVO findById(
             @PathVariable("id") Long id) {
                 return PersonService.findById(id);
             }
 
-    @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
+    @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public List<PersonVO> findAllPerson(){
             return PersonService.findAllPersons();
         }
 
-    @PostMapping( consumes = MediaType.APPLICATION_JSON_VALUE,
-                                        produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping( consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
+                                        produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public PersonVO createPerson(@RequestBody PersonVO personVO) {
         return PersonService.createPerson(personVO);
     }
 
-    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE,
-                consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
+                consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public PersonVO updatePerson(@RequestBody PersonVO personVO){
         return PersonService.updatePerson(personVO);
     }   
     
     
-    @DeleteMapping(value = "/del/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(value = "/del/{id}",produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public ResponseEntity<?> deletePerson(@PathVariable("id") Long id){
         findById(id);
         PersonService.deletePerson(id);
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping(value = "/v2",consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/v2",consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
+            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public PersonVO2 createPersonV2(@RequestBody PersonVO2 personVO) {
 
         return PersonService.createPerson2(personVO);
