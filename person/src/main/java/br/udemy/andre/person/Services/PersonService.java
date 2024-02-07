@@ -3,16 +3,21 @@ package br.udemy.andre.person.Services;
 import java.util.List;
 
 import br.udemy.andre.person.Model.Person;
+import br.udemy.andre.person.PersonController.PersonController;
 import br.udemy.andre.person.PersonVO.PersonVO;
 import br.udemy.andre.person.PersonVO2.PersonVO2;
 import br.udemy.andre.person.Repository.PersonRepo;
 import br.udemy.andre.person.exceptions.ResourceNotFoundExcep;
 import br.udemy.andre.person.mapper.PersonMapper;
 import br.udemy.andre.person.mapper.custom.PersonMapper2;
+import org.aspectj.weaver.ast.Var;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 
 @Service
@@ -27,23 +32,29 @@ public class PersonService{
     private static final Logger logger = LoggerFactory.getLogger(PersonService.class);
 
 
-    public PersonVO findById(Long id) {
-        logger.info("Find Person by id: " + id);
+    public PersonVO findById(Long key) {
+        logger.info("Find Person by id: " + key);
 
-       var entity = personRepo.findById(id).orElseThrow(() -> new ResourceNotFoundExcep("Person not found for this ID"));
+       var entity = personRepo.findById(key).orElseThrow(() -> new ResourceNotFoundExcep("Person not found for this ID"));
 
-        return PersonMapper.parseObject(entity, PersonVO.class);
+        PersonVO vo = PersonMapper.parseObject(entity, PersonVO.class);
+        vo.add(linkTo(methodOn(PersonController.class).findById(key)).withSelfRel());
+        return vo;
+
+
     }
 
     public  List<PersonVO> findAllPersons() {
         logger.info("Find All persons");
-        return PersonMapper.parseListObject(personRepo.findAll(), PersonVO.class);
+        var persons = PersonMapper.parseListObject(personRepo.findAll(), PersonVO.class);
+        persons.stream().forEach(p -> p.add(linkTo(methodOn(PersonController.class).findById(p.getKey())).withSelfRel()));
+        return persons;
     }
 
     public  PersonVO updatePerson(PersonVO person) {
         logger.info("Update PersonVO");
 
-        var entity =  personRepo.findById(person.getId()).orElseThrow(() -> new ResourceNotFoundExcep("Person not found for this ID"));
+        var entity =  personRepo.findById(person.getKey()).orElseThrow(() -> new ResourceNotFoundExcep("Person not found for this ID"));
 
         entity.setName(person.getName());
         entity.setSurname(person.getSurname());
@@ -51,6 +62,8 @@ public class PersonService{
         entity.setGender(person.getGender());
 
         var vo = PersonMapper.parseObject(personRepo.save(entity), PersonVO.class);
+        vo.add(linkTo(methodOn(PersonController.class).findById(vo.getKey())).withSelfRel());
+
         return vo;
     }
 
@@ -68,6 +81,7 @@ public class PersonService{
 
        var entity = PersonMapper.parseObject(person, Person.class);
        var vo = PersonMapper.parseObject(personRepo.save(entity), PersonVO.class);
+        vo.add(linkTo(methodOn(PersonController.class).findById(vo.getKey())).withSelfRel());
         return vo;
     }
 
@@ -79,9 +93,9 @@ public class PersonService{
         return vo;
     }
 
-    public void deletePerson(Long id) {
+    public void deletePerson(Long key) {
         logger.info("Delete Person");
-        personRepo.deleteById(id);
+        personRepo.deleteById(key);
     }
     
 }

@@ -1,9 +1,5 @@
 
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ã‡ùüÿÿÿÿ
-r	java:S116"XRename this field "PersonService" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜È¢·ûÿÿÿÿ
-X
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
-^
-java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(­£¶„
-c
-java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÚË†ëüÿÿÿÿ
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ã‡ùüÿÿÿÿ8±½ã½Õ1
+y	java:S116"XRename this field "PersonService" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜È¢·ûÿÿÿÿ8¸½ã½Õ1
+C
+java:S14520"&Remove usage of generic wildcard type.(®‚ò8»½ã½Õ1

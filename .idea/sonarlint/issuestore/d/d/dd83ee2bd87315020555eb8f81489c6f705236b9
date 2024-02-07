@@ -1,22 +1,24 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ì–©´øÿÿÿÿ8èÖ¥‡Î1
-b
-java:S2259:"EA "NullPointerException" could be thrown; "surname" is nullable here.(âı“›8÷Ö¥‡Î1
-b
-java:S2259;"EA "NullPointerException" could be thrown; "address" is nullable here.(Óõ¦›8÷Ö¥‡Î1
-]
-java:S22596"@A "NullPointerException" could be thrown; "id" is nullable here.(Ó‡Õ•8÷Ö¥‡Î1
-_
-java:S22599"BA "NullPointerException" could be thrown; "name" is nullable here.(‰ß­‹8øÖ¥‡Î1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ì–©´øÿÿÿÿ8Ğ•‹ñÓ1
 f
-java:S2259>"DA "NullPointerException" could be thrown; "gender" is nullable here.(´ï«Øÿÿÿÿÿ8÷Ö¥‡Î1
+java:S2259K"DA "NullPointerException" could be thrown; "gender" is nullable here.(´ï«Øÿÿÿÿÿ8ä•‹ñÓ1
+_
+java:S2259F"BA "NullPointerException" could be thrown; "name" is nullable here.(‰ß­‹8ä•‹ñÓ1
+b
+java:S2259H"EA "NullPointerException" could be thrown; "address" is nullable here.(Óõ¦›8ä•‹ñÓ1
+b
+java:S2259G"EA "NullPointerException" could be thrown; "surname" is nullable here.(âı“›8ä•‹ñÓ1
+]
+java:S2259C"@A "NullPointerException" could be thrown; "id" is nullable here.(Ó‡Õ•8ä•‹ñÓ1
 i
-java:S18716"LThis branch's code block is the same as the block for the branch on line 52.(Ó‡Õ•8üÖ¥‡Î1
+java:S1871C"LThis branch's code block is the same as the block for the branch on line 65.(Ó‡Õ•8è•‹ñÓ1
 i
-java:S18719"LThis branch's code block is the same as the block for the branch on line 55.(‰ß­‹8üÖ¥‡Î1
+java:S1871F"LThis branch's code block is the same as the block for the branch on line 68.(‰ß­‹8è•‹ñÓ1
 i
-java:S1871:"LThis branch's code block is the same as the block for the branch on line 58.(âı“›8üÖ¥‡Î1
+java:S1871G"LThis branch's code block is the same as the block for the branch on line 71.(âı“›8é•‹ñÓ1
 i
-java:S1871;"LThis branch's code block is the same as the block for the branch on line 59.(Óõ¦›8ıÖ¥‡Î1
+java:S1871H"LThis branch's code block is the same as the block for the branch on line 72.(Óõ¦›8é•‹ñÓ1
 n
-java:S1871>"LThis branch's code block is the same as the block for the branch on line 60.(´ï«Øÿÿÿÿÿ8ıÖ¥‡Î1
+java:S1871K"LThis branch's code block is the same as the block for the branch on line 73.(´ï«Øÿÿÿÿÿ8é•‹ñÓ1
+r
+java:S1128"URemove this unused import 'org.springframework.boot.autoconfigure.domain.EntityScan'.(›Ù¯8ê•‹ñÓ1
