@@ -3692,3 +3692,9 @@ Cperson/src/main/java/br/udemy/andre/person/PersonVO2/PersonVO2.java,2/1/21dc05
 Kperson/src/main/java/br/udemy/andre/person/mapper/custom/PersonMapper2.java,a/3/a346d565b47bbbf1ac102f3e0a8e3e579f187392
 p
 @person/src/main/java/br/udemy/andre/person/config/WebConfig.java,3/b/3b2440274c95ff49785970c6b3d73fbea992b4a6
+A
+person/person.iml,0/0/009cfed2a475f6e672ec5c54468705045f2dec3c
+z
+Jperson/src/test/java/br/udemy/andre/person/Services/PersonServiceTest.java,8/9/891dc586535b2ef16e236b96cd93d431b88cd56b
+~
+Nperson/src/main/java/br/udemy/andre/person/exceptions/RequiredIsNullExcep.java,9/0/903fd1ad070d47143be4215eda0c6812f6b7ae1e

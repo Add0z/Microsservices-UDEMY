@@ -7,10 +7,10 @@ import br.udemy.andre.person.PersonController.PersonController;
 import br.udemy.andre.person.PersonVO.PersonVO;
 import br.udemy.andre.person.PersonVO2.PersonVO2;
 import br.udemy.andre.person.Repository.PersonRepo;
+import br.udemy.andre.person.exceptions.RequiredIsNullExcep;
 import br.udemy.andre.person.exceptions.ResourceNotFoundExcep;
 import br.udemy.andre.person.mapper.PersonMapper;
 import br.udemy.andre.person.mapper.custom.PersonMapper2;
-import org.aspectj.weaver.ast.Var;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +53,7 @@ public class PersonService{
 
     public  PersonVO updatePerson(PersonVO person) {
         logger.info("Update PersonVO");
-
+        if (person == null) throw new RequiredIsNullExcep("Required field is null");
         var entity =  personRepo.findById(person.getKey()).orElseThrow(() -> new ResourceNotFoundExcep("Person not found for this ID"));
 
         entity.setName(person.getName());
@@ -71,13 +71,15 @@ public class PersonService{
         PersonVO person = new PersonVO();
         person.setName("PersonName" + i);
         person.setSurname("Surname " + i);
-        person.setAdress("Address" + i);
+        person.setAddress("Address" + i);
         person.setGender("M" + i);
         return person;
     }
 
     public PersonVO createPerson(PersonVO person) {
         logger.info("Create Person");
+        if (person == null) throw new RequiredIsNullExcep("Required field is null");
+
 
        var entity = PersonMapper.parseObject(person, Person.class);
        var vo = PersonMapper.parseObject(personRepo.save(entity), PersonVO.class);
@@ -95,7 +97,9 @@ public class PersonService{
 
     public void deletePerson(Long key) {
         logger.info("Delete Person");
-        personRepo.deleteById(key);
+
+        var entity = personRepo.findById(key).orElseThrow(() -> new ResourceNotFoundExcep("Person not found for this ID"));
+        personRepo.deleteById(entity.getId());
     }
     
 }

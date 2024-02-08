@@ -2,14 +2,14 @@
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ì–©´øÿÿÿÿ8Ð•‹ñÓ1
 f
 java:S2259K"DA "NullPointerException" could be thrown; "gender" is nullable here.(´ï«Øÿÿÿÿÿ8ä•‹ñÓ1
-_
-java:S2259F"BA "NullPointerException" could be thrown; "name" is nullable here.(‰ß­‹8ä•‹ñÓ1
-b
-java:S2259H"EA "NullPointerException" could be thrown; "address" is nullable here.(Óõ¦›8ä•‹ñÓ1
 b
 java:S2259G"EA "NullPointerException" could be thrown; "surname" is nullable here.(âý“›8ä•‹ñÓ1
 ]
 java:S2259C"@A "NullPointerException" could be thrown; "id" is nullable here.(Ó‡Õ•8ä•‹ñÓ1
+b
+java:S2259H"EA "NullPointerException" could be thrown; "address" is nullable here.(Óõ¦›8ä•‹ñÓ1
+_
+java:S2259F"BA "NullPointerException" could be thrown; "name" is nullable here.(‰ß­‹8ä•‹ñÓ1
 i
 java:S1871C"LThis branch's code block is the same as the block for the branch on line 65.(Ó‡Õ•8è•‹ñÓ1
 i

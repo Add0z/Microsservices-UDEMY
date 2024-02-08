@@ -1,6 +1,7 @@
 package br.udemy.andre.person.exceptions.handler;
 import java.util.Date;
 
+import br.udemy.andre.person.exceptions.RequiredIsNullExcep;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -41,6 +42,20 @@ public class CustomizedResponseUnsupportedExce extends ResponseEntityExceptionHa
 		exceptionResponse.setStackTrace(null);
 	
 		return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
+	}
+
+	@ExceptionHandler(RequiredIsNullExcep.class)
+	public final ResponseEntity<ExceptionResponse> HandleRequiredIsNullExcep(
+			Exception message, WebRequest request) {
+		ExceptionResponse exceptionResponse = new ExceptionResponse(
+				new Date(),
+				message.getMessage(),
+				request.getDescription(false));
+
+		// Remove stacktrace from the exception response
+		exceptionResponse.setStackTrace(null);
+
+		return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
 	}
 
 }
