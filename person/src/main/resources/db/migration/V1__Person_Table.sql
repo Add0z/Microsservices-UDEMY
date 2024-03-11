@@ -1,4 +1,4 @@
-create table public.person
+CREATE TABLE IF NOT EXISTS public.person
 (
     id      bigserial
         primary key,

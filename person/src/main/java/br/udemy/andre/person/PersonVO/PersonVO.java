@@ -9,6 +9,8 @@ import org.springframework.hateoas.RepresentationModel;
 import java.io.Serializable;
 
 
+
+
 @JsonPropertyOrder({"key", "name", "surname", "address", "gender"})
 public  class PersonVO extends RepresentationModel<PersonVO> implements Serializable {
 
@@ -115,6 +117,6 @@ public  class PersonVO extends RepresentationModel<PersonVO> implements Serializ
         this.gender = gender;
     }
 
-    
-    
+
+
 }
