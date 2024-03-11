@@ -1,9 +1,11 @@
-package IntegrationTest.testcontainers;
+package integrationtests.testcontainers;
 
 
 import java.util.Map;
 import java.util.stream.Stream;
 
+import br.udemy.andre.PersonApplication;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
@@ -12,8 +14,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.lifecycle.Startables;
 
-@ContextConfiguration(initializers = AbstractIntegrationTest.Initializer.class)
-public class AbstractIntegrationTest {
+@ContextConfiguration(initializers = AbstractIntegrationTest.Initializer.class, classes = PersonApplication.class)public class AbstractIntegrationTest {
 
     static class Initializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
             static PostgreSQLContainer<?> container = new PostgreSQLContainer<>("postgres:latest");

@@ -8,7 +8,7 @@ import java.util.Date;
 
 
 @Entity
-@Table(name="books")
+@Table(name="book")
 public class Book implements Serializable{
 
     private static final long serialVersionUID = 1L;
@@ -20,7 +20,7 @@ public class Book implements Serializable{
     @Column(name = "author", nullable = false, length = 180)
     private String author;
 
-    @Column(name = "launch_date", nullable = false)
+    @Column(name = "publication_date", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date launchDate;
 

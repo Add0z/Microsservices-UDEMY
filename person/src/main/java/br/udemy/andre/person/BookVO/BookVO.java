@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.github.dozermapper.core.Mapping;
 
-@JsonPropertyOrder({"id", "author", "launchDate", "price", "title"})
+@JsonPropertyOrder({"id", "author", "publicationDate", "price", "title"})
 public class BookVO extends RepresentationModel<BookVO> implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -17,7 +17,7 @@ public class BookVO extends RepresentationModel<BookVO> implements Serializable 
     @Mapping("id")
     private Long key;
     private String author;
-    private Date launchDate;
+    private Date publicationDate;
     private Double price;
     private String title;
 
@@ -39,12 +39,12 @@ public class BookVO extends RepresentationModel<BookVO> implements Serializable 
         this.author = author;
     }
 
-    public Date getLaunchDate() {
-        return launchDate;
+    public Date getpublicationDate() {
+        return publicationDate;
     }
 
-    public void setLaunchDate(Date launchDate) {
-        this.launchDate = launchDate;
+    public void setpublicationDate(Date launchDate) {
+        this.publicationDate = launchDate;
     }
 
     public Double getPrice() {
@@ -69,7 +69,7 @@ public class BookVO extends RepresentationModel<BookVO> implements Serializable 
         int result = super.hashCode();
         result = prime * result + ((author == null) ? 0 : author.hashCode());
         result = prime * result + ((key == null) ? 0 : key.hashCode());
-        result = prime * result + ((launchDate == null) ? 0 : launchDate.hashCode());
+        result = prime * result + ((publicationDate == null) ? 0 : publicationDate.hashCode());
         result = prime * result + ((price == null) ? 0 : price.hashCode());
         result = prime * result + ((title == null) ? 0 : title.hashCode());
         return result;
@@ -94,10 +94,10 @@ public class BookVO extends RepresentationModel<BookVO> implements Serializable 
                 return false;
         } else if (!key.equals(other.key))
             return false;
-        if (launchDate == null) {
-            if (other.launchDate != null)
+        if (publicationDate == null) {
+            if (other.publicationDate != null)
                 return false;
-        } else if (!launchDate.equals(other.launchDate))
+        } else if (!publicationDate.equals(other.publicationDate))
             return false;
         if (price == null) {
             if (other.price != null)
