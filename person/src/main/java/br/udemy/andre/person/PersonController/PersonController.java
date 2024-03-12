@@ -26,6 +26,7 @@ public class PersonController {
     @Autowired
    private PersonService PersonService;
 
+    @CrossOrigin(origins = "http://localhost:8089")
     @GetMapping(value = "/{id}",
                     produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     @Operation(summary = "Finds a person", description = "Finds a person by id",
@@ -60,7 +61,7 @@ public class PersonController {
     public List<PersonVO> findAllPerson(){
             return PersonService.findAllPersons();
         }
-
+    @CrossOrigin(origins = "http://localhost:8089")
     @PostMapping( consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
                                         produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     @Operation(summary = "Post a person", description = "Post a person",

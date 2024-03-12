@@ -1,4 +1,4 @@
-package br.udemy.anre.person;
+package br.udemy.andre.person;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

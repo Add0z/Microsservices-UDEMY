@@ -1,15 +1,17 @@
 server:
   port: 8888
 
+cors:
+  originPatterns: http://localhost:8089,http://localhost:3000
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-#    url: jdbc:postgresql://localhost:5432/postgres?useTimezone=true&serverTimezone=UTC
-#    username: postgres
-#    password: 211191
+    url: jdbc:postgresql://localhost:5432/postgres?useTimezone=true&serverTimezone=UTC
+    username: postgres
+    password: 211191
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     show-sql: false
     properties:
       hibernate:
@@ -20,6 +22,7 @@ spring:
     password: 211191
     schemas: person
     locations: classpath:/db/migration
+    enabled: true
   jackson:
     default-property-inclusion: non_null
 springdoc:

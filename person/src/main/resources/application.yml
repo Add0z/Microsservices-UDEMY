@@ -1,5 +1,8 @@
+
 server:
   port: 8089
+cors:
+  originPatterns: http://localhost:8089,http://localhost:3000
 
 spring:
   datasource:
